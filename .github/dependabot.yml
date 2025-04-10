@@ -1,0 +1,14 @@
+version: 2
+updates:
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: chore
+      include: scope
+    reviewers:
+      - aws/sae-enterprise
+      - aws/aws-lambda-tooling
+    open-pull-requests-limit: 10

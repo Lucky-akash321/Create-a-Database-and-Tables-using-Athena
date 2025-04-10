@@ -1,0 +1,28 @@
+# black formatter takes care of the line length
+line-length = 999
+
+# Mininal python version we support is 3.8
+target-version = "py38"
+
+# The code quality of tests can be a bit lower compared to samtranslator
+lint.select = [
+    "E",  # Pyflakes
+    "F",  # Pyflakes
+    "PL", # pylint
+    "I", # isort
+    "ICN", # flake8-import-conventions
+    "PIE", # flake8-pie
+    "Q", # flake8-quotes
+    "TID", # flake8-tidy-imports
+    "RUF", # Ruff-specific rules
+    "UP", # pyupgrade
+]
+
+[lint.per-file-ignores]
+
+# The code quality of tests can be a bit lower:
+"**/*.py" = [
+    "S101", # Use of `assert` detected
+    "PLR", # pylint-refactor
+    "RUF012", # Mutable class attributes should be annotated with `typing.ClassVar`
+]
